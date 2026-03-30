@@ -3,6 +3,11 @@ import tempfile
 import requests
 import whisper
 
+# 确保 ffmpeg 所在的路径在环境变量中
+winget_links_path = os.path.expandvars(r"%LOCALAPPDATA%\Microsoft\WinGet\Links")
+if winget_links_path not in os.environ.get("PATH", ""):
+    os.environ["PATH"] += os.pathsep + winget_links_path
+
 def transcribe_audio_from_url(url: str, model_size: str = "base") -> str:
     """
     从给定 URL 下载音频文件并使用 Whisper 模型将其转换为文本。
