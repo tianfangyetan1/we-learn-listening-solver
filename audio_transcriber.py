@@ -40,7 +40,8 @@ def transcribe_audio_from_url(url: str, model_size: str = "base") -> str:
         model = whisper.load_model(model_size)
         
         # 4. 执行转录
-        result = model.transcribe(temp_file_path)
+        # 显式指定 fp16=False 以避免在 CPU 上运行时出现警告
+        result = model.transcribe(temp_file_path, fp16=False)
         return result.get("text", "").strip()
         
     finally:
