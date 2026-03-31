@@ -70,10 +70,10 @@ def main():
     # 如果 chromedriver_path 为空，则使用 webdriver_manager 自动管理
     if chromedriver_path:
         service = Service(executable_path=chromedriver_path)
-        driver = Chrome(service=service)
+        driver = Chrome(service=service) # type: ignore
     else:
         # 尝试使用 selenium 4.6+ 内置的自动驱动管理
-        driver = Chrome()
+        driver = Chrome() # type: ignore
     
     driver.get(target_url)
     
