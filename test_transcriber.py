@@ -60,9 +60,10 @@ def main():
     chromedriver_path = config.get("chromedriver_path")
     username = config.get("username")
     password = config.get("password")
+    target_url = config.get("target_url")
     
-    if not all([api_key, username, password]):
-        print("请确保 config.json 中包含 api_key, username, password")
+    if not all([api_key, username, password, target_url]):
+        print("请确保 config.json 中包含 api_key, username, password, target_url")
         return
 
     # 2. 浏览器初始化
@@ -74,7 +75,6 @@ def main():
         # 尝试使用 selenium 4.6+ 内置的自动驱动管理
         driver = Chrome()
     
-    target_url = 'https://welearn.sflep.com/student/course_info.aspx?cid=3313'
     driver.get(target_url)
     
     # 3. 自动登录
