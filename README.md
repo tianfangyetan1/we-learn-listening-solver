@@ -10,6 +10,11 @@
 
 ## 环境依赖与安装
 
+### 0. 前置条件
+
+- 安装 [Python 3.14](https://www.python.org/downloads/)
+- 安装 [Chrome](https://www.google.cn/intl/zh-CN/chrome/)
+
 ### 1. 安装 FFmpeg
 
 OpenAI Whisper 依赖 FFmpeg 来处理音频文件。如果你使用的是 Windows 系统，推荐使用 winget 包管理器进行安装：
@@ -46,21 +51,13 @@ pip install -r requirements.txt
 ```json
 {
   "api_key": "你的 DeepSeek API Key",
-  "model": "deepseek-reasoner",
+  "model": "deepseek-v4-pro",
   "chromedriver_path": "C:\\Tools\\ChromeDriver\\chromedriver.exe",
   "username": "你的 WeLearn 账号",
   "password": "你的 WeLearn 密码",
-  "target_url": "你要答题的 WeLearn 课程页面 URL"
+  "target_url": "你要答题的 WeLearn 课程主页"
 }
 ```
-
-**字段说明**：
-- `api_key`: DeepSeek 的 API 密钥，用于调用大模型。
-- `model`: 使用的模型名称，推荐 `deepseek-reasoner` 或 `deepseek-chat`。
-- `chromedriver_path`: ChromeDriver 的本地绝对路径。如果希望自动管理，可留空。
-- `username`: WeLearn 平台的登录手机号或账号。
-- `password`: WeLearn 平台的登录密码。
-- `target_url`: 包含听力题目的具体课程页面的 URL。
 
 ## 使用步骤
 
