@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ## 配置 ChromeDriver（可选）
 
 > [!NOTE]
-> 这一步不是必须的。如果不配置 ChromeDriver，Selenium 会在运行时自动下载对应版本的 ChromeDriver，但是可能需要花费更长的时间才能启动。
+> 这一步不是必须的。如果不配置 ChromeDriver，Selenium 会在运行时自动下载对应版本的 ChromeDriver，但是可能需要更多时间启动。
 
 1. **检查 Chrome 版本**：打开 Chrome 浏览器，点击右上角菜单 -> 帮助 -> 关于 Google Chrome，查看当前版本号。
 2. **下载 ChromeDriver**：前往 [ChromeDriver 官网](https://googlechromelabs.github.io/chrome-for-testing/) 下载与你 Chrome 浏览器版本匹配的驱动程序。
